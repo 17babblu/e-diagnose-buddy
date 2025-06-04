@@ -7,6 +7,10 @@ import { Heart, Brain, Stethoscope, FileText, TrendingUp, Shield } from "lucide-
 import { useNavigate } from "react-router-dom";
 import SymptomChecker from "@/components/SymptomChecker";
 import PatientDashboard from "@/components/PatientDashboard";
+import DiagnosisCenter from "@/components/DiagnosisCenter";
+import TreatmentCenter from "@/components/TreatmentCenter";
+import HealthAnalytics from "@/components/HealthAnalytics";
+import SecurityCenter from "@/components/SecurityCenter";
 import { useState } from "react";
 
 const Index = () => {
@@ -71,6 +75,14 @@ const Index = () => {
         return <SymptomChecker />;
       case 'patient-dashboard':
         return <PatientDashboard />;
+      case 'diagnosis':
+        return <DiagnosisCenter />;
+      case 'treatment':
+        return <TreatmentCenter />;
+      case 'analytics':
+        return <HealthAnalytics />;
+      case 'security':
+        return <SecurityCenter />;
       default:
         return (
           <div className="space-y-8">
@@ -194,6 +206,30 @@ const Index = () => {
                   onClick={() => setActiveTab('patient-dashboard')}
                 >
                   Patient Records
+                </button>
+                <button
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    activeTab === 'diagnosis' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                  onClick={() => setActiveTab('diagnosis')}
+                >
+                  Diagnosis
+                </button>
+                <button
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    activeTab === 'treatment' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                  onClick={() => setActiveTab('treatment')}
+                >
+                  Treatment
+                </button>
+                <button
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    activeTab === 'analytics' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                  onClick={() => setActiveTab('analytics')}
+                >
+                  Analytics
                 </button>
               </div>
             </div>
