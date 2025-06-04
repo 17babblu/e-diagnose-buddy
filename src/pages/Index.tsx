@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,7 @@ import TreatmentCenter from "@/components/TreatmentCenter";
 import HealthAnalytics from "@/components/HealthAnalytics";
 import SecurityCenter from "@/components/SecurityCenter";
 import { useState } from "react";
+import { Toaster } from "@/components/ui/sonner";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -241,6 +241,9 @@ const Index = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {renderContent()}
       </main>
+
+      {/* Toast Notifications */}
+      <Toaster />
     </div>
   );
 };
